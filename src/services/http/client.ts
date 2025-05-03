@@ -1,7 +1,7 @@
 import axios from "axios";
-
+import Cookies from "js-cookie";
 export const httpClient = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -9,7 +9,7 @@ export const httpClient = axios.create({
 
 // Add request interceptor for auth token
 httpClient.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
+  const token = Cookies.get("token");
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }

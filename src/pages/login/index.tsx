@@ -18,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { useLogin } from "@/features/login/hooks/use-login";
 
 export function Login() {
-  const { form, mutate, isPending } = useLogin();
+  const { form, mutate } = useLogin();
 
   return (
     <div className="w-full flex justify-center items-center h-screen">

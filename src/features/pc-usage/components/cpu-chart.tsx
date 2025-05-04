@@ -22,7 +22,7 @@ export function CPUChart({ data }: { data: { date: string; cpu: number }[] }) {
       <CardHeader>
         <CardTitle>CPU Usage</CardTitle>
         <CardDescription>
-          Shows the CPU usage in the current day
+          Shows the percentage of CPU usage in the current day
         </CardDescription>
       </CardHeader>
       <CardContent>

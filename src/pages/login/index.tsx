@@ -68,7 +68,7 @@ export function Login() {
                 )}
               />
               <Button type="submit" className="w-full" isLoading={isPending}>
-                Entrar
+                Login
               </Button>
             </form>
           </Form>

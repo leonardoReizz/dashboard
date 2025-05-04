@@ -18,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { useLogin } from "@/features/login/hooks/use-login";
 
 export function Login() {
-  const { form, mutate } = useLogin();
+  const { form, mutate, isPending } = useLogin();
 
   return (
     <div className="w-full flex justify-center items-center h-screen">
@@ -67,7 +67,7 @@ export function Login() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full" isLoading={isPending}>
                 Entrar
               </Button>
             </form>

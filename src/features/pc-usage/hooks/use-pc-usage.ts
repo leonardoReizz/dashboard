@@ -7,7 +7,7 @@ import { pcUsageService } from "@/services/http/pc-usage";
 export function usePCUsage() {
   const [startDate, setStartDate] = useState<Date | undefined>(new Date());
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, refetch, isRefetching, isPending } = useQuery({
     queryKey: ["pc-usage", startDate],
     queryFn: () => {
       if (startDate) {
@@ -25,5 +25,13 @@ export function usePCUsage() {
     setStartDate(date);
   };
 
-  return { data, isLoading, handleStartDateChange, startDate };
+  return {
+    data,
+    isLoading,
+    handleStartDateChange,
+    startDate,
+    refetch,
+    isRefetching,
+    isPending,
+  };
 }
